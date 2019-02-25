@@ -1,10 +1,5 @@
-float startX = 0.0;
-float startY;
-float endX;
-float endY;
 int distance = 20;
-float[] sinHolder = new float[distance];
-float a = 0.0;
+float angle = 0.0;
 float inc = TWO_PI/25.0;
 
 void setup() {
@@ -23,10 +18,10 @@ void coordinateSystem() {
   for (int i = 0; i < width; i+=distance) {
     fill(0);
     float multiplicator = 20.0;
-    circle(i, height/2+(sin(a)*multiplicator), 5);
+    circle(i, height/2+(sin(angle)*multiplicator), 5);
     
-    line(i, height/2+(sin(a)*multiplicator), i + distance, height/2+(sin(a + inc)*multiplicator));
-    a = a + inc;
+    line(i, height/2+(sin(angle)*multiplicator), i + distance, height/2+(sin(angle + inc)*multiplicator));
+    angle = angle + inc;
   }
   
   // x-Achse beschriften
